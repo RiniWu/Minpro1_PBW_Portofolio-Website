@@ -8,7 +8,7 @@
 
 
 # Portofolio Pribadi - Rini Wulandari
-## Penjelasan Website
+## Tampilan dan Penjelasan Website
 Website portofolio ini saya buat menggunakan HTML, CSS, Bootstrap 5, dan Vue JS untuk menampilkan profil, keterampilan, sertifikat, serta informasi kontak saya. Website ini dirancang dengan tampilan yang sederhana, modern, dan responsif agar nyaman dilihat di berbagai perangkat sekaligus memenuhi ketentuan mini project yang diberikan.
 
 ## 1. Navigasi Bar
@@ -96,7 +96,7 @@ CSS
 - ```letter-spacing``` pada ```.nav-link``` → Memberi sedikit jarak antar huruf agar tampilan lebih rapi dan nyaman dibaca.
 
 
-## 2. Beranda
+## 2. Section Beranda
 
 <img width="1897" height="1021" alt="Screenshot 2026-03-01 191802" src="https://github.com/user-attachments/assets/f76096bf-489c-439f-a7f2-37313d1408fc" />
 
@@ -227,9 +227,9 @@ padding:100px 0;
 - ```.section-space``` → Memberikan jarak atas dan bawah pada setiap section agar tampilan lebih lega dan rapi.
 
 
-## 3. Tentang Saya
+## 3. Section Tentang Saya
 
-<img width="1900" height="1025" alt="Screenshot 2026-03-01 194530" src="https://github.com/user-attachments/assets/bd833d60-0785-433c-9aa9-24401763d92e" />
+<img width="1894" height="1025" alt="image" src="https://github.com/user-attachments/assets/ed9ee47e-68e3-4da5-9f39-c82dc1cae5d6" />
 
 Berisi:
 1. Latar Belakang
@@ -376,14 +376,230 @@ CSS
 - ```.accent-line``` → Membuat garis kecil sebagai elemen dekoratif untuk mempertegas judul di dalam card.
 
 
+## 4. Section Sertifikat
+
+<img width="1898" height="1025" alt="image" src="https://github.com/user-attachments/assets/63a1c65c-330d-446f-ad3f-c3e057138b09" />
+
+Menampilkan sertifikat-sertifikat yang diraih sejauh ini.
+
+### Penjelasan Kode
+HTML
+```
+<!-- Sertifikat -->
+<section id="sertifikat" class="section-space bg-light">
+  <div class="container text-center">
+
+    <h2 class="fw-bold mb-5">Sertifikat</h2>
+
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" v-for="cert in sertifikat">
+        <div class="certificate-card p-4 h-100">
+          
+          <img :src="cert.image" class="certificate-image mb-3">
+
+          <h6 class="fw-bold">{{ cert.title }}</h6>
+          <p class="text-muted small mb-0">{{ cert.desc }}</p>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+```
+```
+      sertifikat:[
+        {title:"APLIKASI 2025", desc:"Anggota Divisi Acara APLIKASI 2025", image:"images/AnggotaDivisiAcara_APLIKASI.jpg"},
+        {title:"Kepengurusan INFORSA Tahun 2025", desc:"Sekretaris Departemen Advocacy & Welfare", image:"images/Sekretaris_Adwel.png"},
+        {title:"INSEVENT 2025", desc:"Anggota Divisi Acara INSEVENT 2025", image:"images/AnggotaDivisiAcara_INSEVENT.jpg"},
+        {title:"Knowledge Center", desc:"Peserta", image:"images/Peserta_KC.jpg"},
+        {title:"Moderator Talkshow", desc:"Kegiatan INSEVENT 2025", image:"images/Moderator_Talkshow.jpg"},
+        {title:"Upgrading Kepengurusan INFORSA Tahun 2025", desc:"Peserta", image:"images/Peserta_Upgrading.jpg"}
+      ]
+```
+- Section sertifikat secara dinamis menggunakan ```Vue.js```.
+- Data sertifikat disimpan dalam array ```sertifikat``` yang berisi judul, deskripsi, dan gambar untuk setiap sertifikat. Pada bagian HTML, digunakan ```v-for``` untuk melakukan perulangan sehingga setiap data dalam array otomatis ditampilkan menjadi card. Gambar ditampilkan menggunakan binding ```:src```, sedangkan judul dan deskripsi ditampilkan dengan interpolation ```{{ }}```. Dengan cara ini, jika ingin menambah atau mengubah sertifikat, cukup mengedit data tanpa perlu mengubah struktur HTML.
+
+CSS
+```
+/* Sertifikat */
+.certificate-card{
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.certificate-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+}
+
+.certificate-image{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.progress{
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+}
+
+.skill-bar{
+    background-color: #7c3aed; /* warna ungu tema kamu */
+    border-radius: 10px;
+}
+```
+- ```.certificate-card``` → Membuat tampilan card sertifikat berwarna putih dengan sudut membulat dan bayangan halus agar terlihat modern.
+- ```.certificate-card:hover``` → Memberikan efek naik dan bayangan lebih tegas saat kursor diarahkan ke card.
+- ```.certificate-image``` → Mengatur ukuran gambar sertifikat agar proporsional, rapi, dan terpotong otomatis jika perlu (```object-fit: cover```).
+- ```.progress``` → Mengatur tampilan dasar progress bar dengan tinggi kecil dan sudut membulat.
+- ```.skill-bar``` → Memberikan warna ungu pada isi progress bar sesuai tema website dan membuat sudutnya membulat.
 
 
+## 5. Section Kontak
+
+<img width="1898" height="394" alt="image" src="https://github.com/user-attachments/assets/b05431c3-4269-4683-ac22-638352c9a95c" />
+
+Menampilkan icon kontak dan media sosial saya yang bisa dihubungi.
+
+### Penjelasan Kode
+HTML
+```
+<!-- Kontak -->
+<section id="contact" class="contact-section text-center">
+  <div class="container">
+
+    <p class="contact-label">Kontak</p>
+    <h2 class="fw-bold fs-2 mb-4">Hubungi Saya</h2>
+
+    <div class="social-icons d-flex justify-content-center gap-4">
+
+      <a href="https://wa.me/6285255509272" class="social-item">
+        <i class="bi bi-telephone"></i>
+      </a>
+
+      <a href="mailto:riniwulandari1205@email.com" class="social-item">
+        <i class="bi bi-envelope"></i>
+      </a>
+
+      <a href="https://github.com/RiniWu" 
+         class="social-item" 
+         target="_blank">
+        <i class="bi bi-github"></i>
+      </a>
+
+      <a href="https://www.instagram.com/riniwulan_dari_?igsh=MTNtOXNhbTVkbHc5MA==" 
+         class="social-item" 
+         target="_blank">
+        <i class="bi bi-instagram"></i>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+```
+- Section Kontak yang menampilkan informasi dan akses langsung ke media komunikasi.
+- Di dalamnya terdapat judul “Hubungi Saya” serta beberapa ikon sosial media seperti WhatsApp, email, GitHub, dan Instagram.
+- Setiap ikon dibungkus dalam tag ```<a>``` sehingga dapat diklik dan langsung mengarah ke link tujuan, misalnya ```wa.me``` untuk WhatsApp dan ```mailto:``` untuk email.
+- Ikon yang digunakan berasal dari Bootstrap Icons, sehingga tampilannya sederhana dan konsisten. Tata letaknya dibuat rata tengah menggunakan kelas Bootstrap agar terlihat rapi dan mudah diakses oleh pengunjung.
+
+CSS
+```
+/* Kontak */
+.contact-section{
+    padding: 120px 0;
+    background: #f9fafb;
+}
+
+.contact-label{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.social-item{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #1f2937; /* hitam/navy */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.social-item:hover{
+    background: #f3f4f6;
+    color: #1f2937;
+    transform: translateY(-5px);
+}
+
+.social-item:active,
+.social-item:focus{
+    background: #f3f4f6;
+    color: #1f2937;
+    outline: none;
+}
+```
+- ```.contact-section``` → Memberikan jarak atas-bawah yang luas dan background terang agar bagian kontak terlihat bersih dan terpisah dari section lain.
+- ```.contact-label``` → Mengatur teks label “Kontak” agar sedikit lebih tebal dan memiliki jarak bawah.
+- ```.social-item``` → Mendesain ikon sosial menjadi lingkaran dengan ukuran tetap, rata tengah, memiliki bayangan, dan warna teks gelap agar terlihat modern.
+- ```.social-item:hover```` → Memberikan efek perubahan warna background dan sedikit naik saat kursor diarahkan ke ikon.
+- ```.social-item:active, :focus``` → Menjaga tampilan ikon tetap konsisten saat diklik atau difokuskan.
 
 
+## 6. Footer
+
+<img width="1898" height="96" alt="image" src="https://github.com/user-attachments/assets/0ad6cbd2-07a8-4508-9889-57e7961ef157" />
+
+### Penjelasan Kode
+HTML
+```
+<footer class="footer">
+  <div class="container text-center">
+    <p class="mb-0">
+      © 2026 Rini Wulandari. Mahasiswa S1 Sistem Informasi Universitas Mulawarman.
+    </p>
+  </div>
+</footer>
+```
+- footer terletak di bagian paling bawah website.
+- Di dalamnya terdapat teks copyright yang menampilkan tahun, nama, dan informasi singkat mengenai status sebagai mahasiswa Sistem Informasi Universitas Mulawarman.
+- Elemen ```container``` digunakan agar isi footer tetap rapi dan sejajar dengan bagian lain, sedangkan ```text-center``` membuat teks berada di tengah.
+
+CSS
+```
+.footer{
+    background: #0f172a;
+    color: #cbd5e1;
+    padding: 25px 0;
+    font-size: 14px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+```
+- ```background: #0f172a;``` → Memberikan warna gelap pada footer agar terlihat tegas dan berbeda dari section lainnya.
+- ```color: #cbd5e1;``` → Mengatur warna teks menjadi abu terang agar kontras dan mudah dibaca di background gelap.
+- ```padding: 25px 0;``` → Memberikan jarak atas dan bawah supaya isi footer tidak terlalu rapat.
+- ```font-size: 14px;``` → Mengatur ukuran teks agar terlihat lebih kecil dan sesuai sebagai bagian penutup.
+- ```border-top``` → Menambahkan garis tipis di bagian atas footer untuk memberi pemisah dengan section sebelumnya.
 
 
-
-
+## Teknologi Yang Digunakan
+1. HTML5 → Digunakan untuk membangun struktur dasar website seperti navbar, section, card, dan footer.
+2. CSS3 → Digunakan untuk mengatur tampilan, warna, layout, efek hover, dan responsivitas tambahan.
+3. Bootstrap 5 → Digunakan untuk membantu layouting (grid system, container, row, col), komponen seperti navbar dan progress bar, serta membuat tampilan responsif.
+4. Bootstrap Icons → Digunakan untuk menampilkan ikon sosial media pada bagian kontak.
+5. Vue JS → Digunakan untuk mengelola dan menampilkan data secara dinamis seperti nama, deskripsi, skill, dan sertifikat menggunakan interpolation dan v-for.\
+6. Google Fonts (Poppins) → Digunakan untuk memberikan tampilan tipografi yang lebih modern dan konsisten.
 
 
 

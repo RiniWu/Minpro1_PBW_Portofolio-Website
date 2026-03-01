@@ -1,14 +1,13 @@
-# Minpro1_Pemrograman Berbasis Web
+# Minpro1_Portofolio Pribadi_Rini Wulandari
 
-## Nama: Rini Wulandari
+### Nama: Rini Wulandari
 
-## NIM: 2409116048
+### NIM: 2409116048
 
-## Kelas: Sistem Informasi B 2024
+### Kelas: Sistem Informasi B 2024
 
 
-# Portofolio Pribadi - Rini Wulandari
-## Tampilan dan Penjelasan Website
+# 🔳Tampilan dan Penjelasan Website
 Website portofolio ini saya buat menggunakan HTML, CSS, Bootstrap 5, dan Vue JS untuk menampilkan profil, keterampilan, sertifikat, serta informasi kontak saya. Website ini dirancang dengan tampilan yang sederhana, modern, dan responsif agar nyaman dilihat di berbagai perangkat sekaligus memenuhi ketentuan mini project yang diberikan.
 
 ## 1. Navigasi Bar
@@ -95,6 +94,7 @@ CSS
 - ```.nav-spacing``` ```.nav-item``` → Memberikan jarak antar menu agar tidak terlalu rapat.
 - ```letter-spacing``` pada ```.nav-link``` → Memberi sedikit jarak antar huruf agar tampilan lebih rapi dan nyaman dibaca.
 
+#
 
 ## 2. Section Beranda
 
@@ -226,6 +226,7 @@ padding:100px 0;
 - ```@media (max-width: 768px)``` → Mengatur tampilan agar tetap responsif di layar kecil dengan mengecilkan ukuran gambar dan menyesuaikan jarak.
 - ```.section-space``` → Memberikan jarak atas dan bawah pada setiap section agar tampilan lebih lega dan rapi.
 
+#
 
 ## 3. Section Tentang Saya
 
@@ -375,6 +376,7 @@ CSS
 - ```.about-image``` → Mengatur ukuran gambar agar proporsional, sudutnya membulat, dan diberi bayangan agar lebih menarik.
 - ```.accent-line``` → Membuat garis kecil sebagai elemen dekoratif untuk mempertegas judul di dalam card.
 
+#
 
 ## 4. Section Sertifikat
 
@@ -460,6 +462,7 @@ CSS
 - ```.progress``` → Mengatur tampilan dasar progress bar dengan tinggi kecil dan sudut membulat.
 - ```.skill-bar``` → Memberikan warna ungu pada isi progress bar sesuai tema website dan membuat sudutnya membulat.
 
+#
 
 ## 5. Section Kontak
 
@@ -556,6 +559,7 @@ CSS
 - ```.social-item:hover```` → Memberikan efek perubahan warna background dan sedikit naik saat kursor diarahkan ke ikon.
 - ```.social-item:active, :focus``` → Menjaga tampilan ikon tetap konsisten saat diklik atau difokuskan.
 
+#
 
 ## 6. Footer
 
@@ -592,14 +596,26 @@ CSS
 - ```font-size: 14px;``` → Mengatur ukuran teks agar terlihat lebih kecil dan sesuai sebagai bagian penutup.
 - ```border-top``` → Menambahkan garis tipis di bagian atas footer untuk memberi pemisah dengan section sebelumnya.
 
+#
 
-## Teknologi Yang Digunakan
-1. HTML5 → Digunakan untuk membangun struktur dasar website seperti navbar, section, card, dan footer.
-2. CSS3 → Digunakan untuk mengatur tampilan, warna, layout, efek hover, dan responsivitas tambahan.
-3. Bootstrap 5 → Digunakan untuk membantu layouting (grid system, container, row, col), komponen seperti navbar dan progress bar, serta membuat tampilan responsif.
-4. Bootstrap Icons → Digunakan untuk menampilkan ikon sosial media pada bagian kontak.
-5. Vue JS → Digunakan untuk mengelola dan menampilkan data secara dinamis seperti nama, deskripsi, skill, dan sertifikat menggunakan interpolation dan v-for.\
-6. Google Fonts (Poppins) → Digunakan untuk memberikan tampilan tipografi yang lebih modern dan konsisten.
+# 💻Teknologi Yang Digunakan
+## 1. HTML5
+Membangun struktur dasar website seperti navbar, section, card, dan footer.
+
+## 2. CSS3
+Mengatur tampilan, warna, layout, efek hover, dan responsivitas tambahan.
+
+## 3. Bootstrap 5
+Membantu layouting (grid system, container, row, col), komponen seperti navbar dan progress bar, serta membuat tampilan responsif.
+
+## 4. Bootstrap Icons
+Menampilkan ikon sosial media pada bagian kontak.
+
+## 5. Vue JS (CDN)
+Mengelola dan menampilkan data secara dinamis seperti nama, deskripsi, skill, dan sertifikat menggunakan interpolation dan ```v-for```.
+
+## 6. Google Fonts (Poppins)
+Memberikan tampilan tipografi yang lebih modern dan konsisten.
 
 
 
